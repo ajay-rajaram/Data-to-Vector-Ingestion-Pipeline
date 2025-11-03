@@ -1,10 +1,10 @@
 # Data-to-Vector Ingestion Pipeline
 
 ## Overview
-The Data-to-Vector Ingestion Pipeline is an enterprise-grade solution designed to empower businesses to build scalable vector databases from diverse data sources, including documents (PDFs, DOCX, TXT, CSV) and webpages. By transforming raw data into semantic embeddings stored in a FAISS vector database, it enables efficient, AI-driven semantic search and retrieval. The pipeline supports document chunking, deduplication, web scraping, and planned OCR integration for scanned PDFs, with robust error handling, logging, and performance optimization. Deployed as a Flask-based web application with a user-friendly front-end, it is ready for enterprise environments, including IIS deployment.
+The Data-to-Vector Ingestion Pipeline is an enterprise-grade solution designed to empower businesses to build scalable vector databases from diverse data sources, including documents (PDFs, DOCX, TXT, CSV) and webpages. By transforming raw data into semantic embeddings stored in a FAISS vector database, it enables efficient, AI-driven semantic search and retrieval. The pipeline supports multiprocessing-based document chunking, deduplication, web scraping, and planned OCR integration for scanned PDFs, with robust error handling, logging, and performance optimization. Deployed as a Flask-based web application with a user-friendly front-end, it is ready for enterprise environments, including IIS deployment.
 
 ## Key Features
-- **Multi-Source Data Ingestion**: Seamlessly process documents (PDFs, DOCX, TXT, CSV) and webpages into a unified vector database.
+- **Multi-Source Data Ingestion**: Accelerated by multiprocessing, documents (PDFs, DOCX, TXT, CSV) and webpages are processed in parallel for high-speed ingestion into a unified vector database.
 - **Semantic Embeddings**: Generate high-quality embeddings using Sentence Transformers (e.g., all-MiniLM-L6-v2) with GPU acceleration support.
 - **FAISS Vector Storage**: Store and query embeddings efficiently with FAISS, supporting incremental updates and deduplication.
 - **Document Chunking & Deduplication**: Split documents into semantically coherent chunks with SHA-256 hashing to eliminate duplicates.
@@ -42,7 +42,7 @@ The Data-to-Vector Ingestion Pipeline is an enterprise-grade solution designed t
   - `azure_ocr.py`: Planned OCR for scanned PDFs.
   - `doc_chunker.py`: Document chunking and deduplication.
   - `embeddings.py`: Embedding generation with Sentence Transformers.
-  - `file_processor.py`: File loading and processing.
+  - `file_processor.py`: File loading and acceralated processing.
   - `input_validation.py`: Input validation for files and URLs.
   - `web_processor.py`: Web page scraping and processing.
   - `has_images.py`: Detection of image-heavy PDFs.
